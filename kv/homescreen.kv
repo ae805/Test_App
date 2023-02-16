@@ -1,0 +1,37 @@
+#: import utils kivy.utils
+
+<HomeScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FAF9F6")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            canvas:
+                Color:
+                    rgb: utils.get_color_from_hex("#000000")
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            pos_hint: {"center_x": .5, "center_y": .95}
+            size_hint: 1, .1
+        Label:
+            text: "Welcome!"
+            font_size: 20
+            bold: True
+            color: utils.get_color_from_hex("#FAF9F6")
+            pos_hint: {"center_x": .5, "center_y": .95}
+            size_hint: 1, .1
+        ImageButton:
+            source: "icons/003-white_settings.png"
+            on_release: app.change_screen("settings_screen")
+            pos_hint: {"center_x": .85, "center_y": .95}
+            size_hint: .065, .065
+        Button:
+            text: "Hello"
+            font_size: 15
+            background_color: "#000000"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint: .65, .1
